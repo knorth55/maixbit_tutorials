@@ -2,7 +2,7 @@
 
 Tutorials and samples for Maix Bit
 
-This repo is based on [MaixPy official documentation](https://maixpy.sipeed.com/en/).
+This repo is based on [MaixPy official documentation](https://maixpy.sipeed.com/en/), but specialized for Maix Bit.
 
 ![](./img/maixbit_yolo_tiny.gif)
 
@@ -145,7 +145,7 @@ Then, select `scripts/demo_fps_display.py` and click `Transfer` button below.
 
 ![](./img/upyloader_transfer.png)
 
-### Execute through `minicom`
+### Run display demo via `minicom`
 
 Run `minicom`
 
@@ -158,4 +158,49 @@ Then, execute `demo_fps_display.py` as below.
 ```python
 with open('demo_fps_display.py') as f:
     exec(f.read())
+fps_display()
 ```
+
+Now, LCD show camera RGB image with FPS.
+
+### Run YOLO find face demo
+
+### Clone this repo
+
+Same as [here](https://github.com/knorth55/maixbit_tutorials/tree/master#clone-this-repo) .
+
+
+### Burn `face_model_at_0x300000.kfpkg` into Maix Bit Flash
+
+First, download `face_model_at_0x300000.kfpkg` YOLO face detection model from [here](https://github.com/sipeed/MaixPy/releases/download/v0.3.2/face_model_at_0x300000.kfpkg).
+
+Then, burn `face_model_at_0x300000.kfpkg` by `kflash_gui` as below.
+
+```bash
+cd ~/Downloads/kflash_gui
+./kflash_gui
+```
+![](./img/kflash_gui_face_model.png)
+
+### Upload `scripts/demo_find_face.py`
+
+Same as [here](https://github.com/knorth55/maixbit_tutorials/tree/master#upload-scriptsdemo_fps_displaypy).
+
+
+### Run find face demo via `minicom`
+
+```bash
+minicom
+```
+
+Then, execute `demo_find_face.py` as below.
+
+```python
+with open('demo_find_face.py') as f:
+    exec(f.read())
+find_face()
+```
+
+Finally, you can get face detection as below.
+
+![](./img/maixbit_yolo_tiny.gif)

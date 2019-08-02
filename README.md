@@ -124,3 +124,38 @@ export PATH=$HOME/.local/bin:$PATH
 cp ./uPyLoader-linux ~/.local/bin/uPyLoader
 uPyLoader
 ```
+
+## Run display demo
+
+### Clone this repo
+
+```bash
+git clone https://github.com/knorth55/maixbit_tutorials.git
+```
+
+### Upload `scripts/demo_fps_display.py`
+
+```bash
+cd maixbit_tutorials
+uPyLoader
+```
+First click `connect` button to connect `/dev/ttyUSB0`.
+
+Then, select `scripts/demo_fps_display.py` and click `Transfer` button below.
+
+![](./img/upyloader_transfer.png)
+
+### Execute through `minicom`
+
+Run `minicom`
+
+```bash
+minicom
+```
+
+Then, execute `demo_fps_display.py` as below.
+
+```python
+with open('demo_fps_display.py') as f:
+    exec(f.read())
+```
